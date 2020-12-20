@@ -1,0 +1,50 @@
+<%- include ('../partials/header') %>  
+  
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1473621091084-7371cb321dfc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <% adminActions.forEach( (action)=>{ %>
+
+    <div class="row">
+        <div class="col-lg-4 mx-auto">
+          <button id="<%=action.actionId%>" onclick="catchID(this.id)" type="button" class="btn btn-outline-primary btn-block float-left"><%=action.displayName %></button>
+        </div>
+        <div class="col-lg-8 mx-auto">
+          
+        </div>
+        
+    </div>
+    
+    <% }); %>
+  </div>
+
+  <script>
+    function catchID(clicked_id){
+      alert(clicked_id + " numarali butona tiklandi");
+      if (clicked_id == 1) {
+        window.location.href = 'changeHomeImage'; return false;
+      }
+      if (clicked_id == 4) {
+        window.location.href = 'addNewBlog'; return false;
+      }
+    }
+  </script>
+
+
+  <%- include ('../partials/footer') %>  
